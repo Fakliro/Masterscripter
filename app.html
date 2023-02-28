@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>OpenAI GPT API Example</title>
+</head>
+<body>
+    <!-- <input type="text" id="inputField">
+    <button onclick="sendInput()">Send</button>
+    <div id="output"></div> -->
+<!-- HTML form -->
+<form id="app-form">
+  <label for="output-type">Output Type:</label>
+  <select name="output-type" id="output-type">
+    <option value="web">Web Application</option>
+    <option value="desktop">Desktop Application</option>
+    <option value="mobile">Mobile Application</option>
+  </select><br><br>
+
+  <label for="coding-language">Coding Language:</label>
+  <select name="coding-language" id="coding-language">
+    <option value="javascript">JavaScript</option>
+    <option value="python">Python</option>
+    <option value="java">Java</option>
+  </select><br><br>
+
+  <label for="os">Target Operating System:</label>
+  <select name="os" id="os">
+    <option value="windows">Windows</option>
+    <option value="mac">Mac</option>
+    <option value="linux">Linux</option>
+  </select><br><br>
+
+  <label for="description">Description:</label><br>
+  <textarea name="description" id="description" rows="4" cols="50"></textarea><br><br>
+
+  <button type="button" onclick="generateCode()">Generate Code</button>
+</form>
+<form id="app-generator-form">
+  <label for="output-type">Output Type:</label>
+  <select id="output-type" name="output-type" required>
+    <option value="">Select an option</option>
+    <option value="web">Web Application</option>
+    <option value="mobile">Mobile Application</option>
+    <option value="desktop">Desktop Application</option>
+    <option value="script">Script</option>
+  </select>
+
+  <label for="coding-language">Coding Language:</label>
+  <select id="coding-language" name="coding-language" required>
+    <option value="">Select a language</option>
+    <option value="javascript">JavaScript</option>
+    <option value="python">Python</option>
+    <option value="java">Java</option>
+    <option value="csharp">C#</option>
+  </select>
+
+  <label for="target-os">Target Operating System:</label>
+  <select id="target-os" name="target-os" required>
+    <option value="">Select an operating system</option>
+    <option value="windows">Windows</option>
+    <option value="macos">macOS</option>
+    <option value="linux">Linux</option>
+    <option value="ios">iOS</option>
+    <option value="android">Android</option>
+  </select>
+
+  <label for="user-roles-permissions">User Roles and Permissions:</label>
+  <input type="text" id="user-roles-permissions" name="user-roles-permissions">
+
+  <label for="data-storage-retrieval">Data Storage and Retrieval:</label>
+  <input type="text" id="data-storage-retrieval" name="data-storage-retrieval">
+
+  <label for="third-party-integrations">Third-Party Integrations:</label>
+  <input type="text" id="third-party-integrations" name="third-party-integrations">
+
+  <label for="functional-requirements">Functional Requirements:</label>
+  <textarea id="functional-requirements" name="functional-requirements" required></textarea>
+
+  <label for="non-functional-requirements">Non-Functional Requirements:</label>
+  <textarea id="non-functional-requirements" name="non-functional-requirements"></textarea>
+
+  <button type="submit">Generate Code</button>
+</form>
+
+<!-- JavaScript code to send request to ChatGPT API -->
+<script>
+  function generateCode() {
+    // Get form inputs
+    const outputType = document.getElementById("output-type").value;
+    const codingLanguage = document.getElementById("coding-language").value;
+    const os = document.getElementById("os").value;
+    const description = document.getElementById("description").value;
+
+    // Create request body
+    const requestBody = {
+      output_type: outputType,
+      coding_language: codingLanguage,
+      target_os: os,
+      description: description
+    };
+
+    // // Send request to ChatGPT API
+    // fetch('https://api.chatgpt.com/generate_code', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify(requestBody)
+    // })
+    // .then(response => response.json())
+    // .then(data => {
+    //   console.log('Generated code:', data.code);
+    //   // Do something with generated code
+    // })
+    // .catch(error => console.error(error));
+
+  console.log(requestBody);
+  console.log(JSON.stringify(requestBody));
+fetch('https://cors-anywhere.herokuapp.com/https://api.chatgpt.com/generate_code', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'X-Requested-With': 'XMLHttpRequest'
+  },
+  body: JSON.stringify(requestBody)
+})
+.then(response => response.json())
+.then(data => {
+  console.log('Generated code:', data.code);
+  // Do something with generated code
+})
+.catch(error => console.error(error));
+  }
+</script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script> -->
+</body>
+</html>
