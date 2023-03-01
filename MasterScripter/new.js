@@ -28,11 +28,10 @@ async function handleSubmit(event) {
     };
 
     // Send request to ChatGPT API
-    fetch('https://cors-anywhere.herokuapp.com/https://api.chatgpt.com/generate_code', {
+    fetch('127.0.0.1:3001/chatgpt/gpt', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'X-Requested-With': 'XMLHttpRequest'
         },
         body: JSON.stringify(requestData)
     })
