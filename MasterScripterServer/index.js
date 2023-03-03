@@ -10,6 +10,7 @@ const app = express();
 app.use(
     cors({
         origin: [
+            "http://127.0.0.1:5500",
         ],
         credentials: true,
     })
@@ -18,16 +19,14 @@ app.use(
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-//Connect the Database
-// connectDB().then(() => {
-//   console.log("*************Connected to DB successfully***************");
-// });
-
 //Listen
-const port = 3001;
+app.listen(process.env.PORT, () => {
+    console.log(`Listening on port ${process.env.PORT}`);
+});
 
-app.listen(port, () => {
-    console.log(`Listening on port ${port}`);
+app.get('/', (req, res) => {
+    console.log("came")
+    res.send("thabnks")
 });
 
 //Use routes

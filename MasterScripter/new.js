@@ -28,16 +28,15 @@ async function handleSubmit(event) {
     };
 
     // Send request to ChatGPT API
-    fetch('127.0.0.1:3001/chatgpt/gpt', {
+    fetch('http://192.168.153.1:8000/chatgpt', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(requestData)
     })
-        .then(response => response.json())
         .then(data => {
-            console.log('Generated code:', data.code);
+            console.log('Generated code:', data);
             // Do something with generated code
         })
         .catch(error => console.error(error));
