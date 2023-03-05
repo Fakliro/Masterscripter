@@ -40,45 +40,4 @@ async function handleSubmit(event) {
             // Do something with generated code
         })
         .catch(error => console.error(error));
-
-    // Send request to ChatGPT API
-    //   const response = await fetch('https://api.openai.com/v1/engine/davinci-codex/completions', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //       'Authorization': 'Bearer YOUR_OPENAI_API_KEY',
-    //     },
-    //     body: JSON.stringify({
-    //       prompt: generatePrompt(requestData),
-    //       max_tokens: 1024,
-    //       n: 1,
-    //       stop: '\n',
-    //       temperature: 0.7
-    //     })
-    //   });
-
-    //   // Parse response data
-    //   const responseData = await response.json();
-    //   const generatedCode = responseData.choices[0].text.trim();
-
-    //   // Output generated code to console
-    //   console.log(generatedCode);
-    // }
-
-    // function generatePrompt(requestData) {
-    //   const prompt = `Generate ${requestData.outputType} ${requestData.codingLanguage} code for ${requestData.targetOS}.\n\n`;
-
-    //   const optionalInputs = [
-    //     { name: 'User Roles and Permissions', value: requestData.userRolesAndPermissions },
-    //     { name: 'Data Storage and Retrieval', value: requestData.dataStorageAndRetrieval },
-    //     { name: 'Third-Party Integrations', value: requestData.thirdPartyIntegrations },
-    //     { name: 'Non-Functional Requirements', value: requestData.nonFunctionalRequirements }
-    //   ];
-
-    //   const inputsPrompt = optionalInputs
-    //     .filter(input => input.value.trim() !== '')
-    //     .map(input => `- ${input.name}: ${input.value}\n`)
-    //     .join('');
-
-    //   return `${prompt}${inputsPrompt}\nFunctional Requirements:\n${requestData.functionalRequirements}\n`;
 }
