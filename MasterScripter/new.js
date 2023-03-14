@@ -1,3 +1,18 @@
+const inputs = [{ name: "What is the product", inputType: "text", options: "" },
+{ name: "What is the objective/purpose", inputType: "text", options: "" },
+{ name: "Enviorment", inputType: "text", options: "" },
+{ name: "Further enviorment description", inputType: "text", options: "" },
+{ name: "Usage methodolgy/interaction", inputType: "text", options: "" },
+{ name: "Functional requirements", inputType: "text", options: "" },
+{ name: "Desired outcome", inputType: "text", options: "" },
+{ name: "Coding language", inputType: "text", options: "" },
+{ name: "Third party API integrations", inputType: "text", options: "" },
+{ name: "Depends on", inputType: "text", options: "" },
+{ name: "Do not use", inputType: "text", options: "" },
+{ name: "Is there any System limitations", inputType: "text", options: "" },
+{ name: "estethic requirements", inputType: "text", options: "" },
+{ name: "Data storage", inputType: "text", options: "" }];
+
 const form = document.getElementById('app-generator-form');
 form.addEventListener('submit', handleSubmit);
 
