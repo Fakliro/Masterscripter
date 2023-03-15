@@ -2,6 +2,14 @@ mongoose for sending http requests
 
 recive a target find its model by given size and save it to our database
 
+you want me to create a server in JavaScript for Windows OS, working on Node.js 
+with memory limitations, using MongoDB, and integrating Express.js and Auth0. 
+The server should allow clients to perform CRUD operations on data stored on the
+server, and use HTTP methods to handle incoming requests from clients. 
+Additionally, the server should have an authentication system with different 
+permissions for different users.
+Did I understand you correctly?
+
 
 
 
